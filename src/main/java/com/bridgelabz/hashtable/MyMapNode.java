@@ -1,18 +1,14 @@
 package com.bridgelabz.hashtable;
-
-public class MyMapNode<V, K> {
+public class MyMapNode<K, V> {
 	K key;
     V value;
-    MyMapNode<K, V> next1;
-	private Object next2;
-	private Object next3;
-	private Object next4;
+    MyMapNode<K, V> next;
 
     // constructor name as MyMaoNode and passing key and value
     public MyMapNode(K key, V value) {
         this.key = key;
         this.value = value;
-        next1 = null;
+        next = null;
     }
 
    // method getter and setter
@@ -33,19 +29,17 @@ public class MyMapNode<V, K> {
     }
 
     public MyMapNode<K, V> getNext() {
-        return next1;
+        return next;
     }
 
     public void setNext(MyMapNode<K, V> next) {
-        this.next1 = (MyMapNode<K, V>) next;
+        this.next = (MyMapNode<K, V>) next;
     }
 
-    @Override
     public String toString() {
         StringBuilder nodeString = new StringBuilder();
         nodeString.append("MyMapNode{" + " Key= ").append(key).append(" Value= ").append(value).append('}');
-        Object next;
-		if (next != null)
+        if (next != null)
             nodeString.append("->").append(next);
         return nodeString.toString();
     }
